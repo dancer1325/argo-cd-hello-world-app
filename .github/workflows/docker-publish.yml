@@ -35,5 +35,5 @@ jobs:
           context: .
           push: true
           tags: |
-            argoprojdemo/argo-cd-hello-world-app:${{ steps.version.outputs.new_tag }}
-            argoprojdemo/argo-cd-hello-world-app:latest
+            dancer13/argo-cd-hello-world-app:${{ steps.version.outputs.new_tag }}
+            dancer13/argo-cd-hello-world-app:latest
