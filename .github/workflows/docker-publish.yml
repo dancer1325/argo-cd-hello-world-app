@@ -38,6 +38,7 @@ jobs:
             dancer13/argo-cd-hello-world-app:${{ steps.version.outputs.new_tag }}
             dancer13/argo-cd-hello-world-app:latest
 
+
       - name: Update image tag in config repo
         run: |
           git clone https://x-access-token:${{ secrets.GH_PAT }}@github.com/dancer1325/argo-cd-hello-world-config.git config-repo
