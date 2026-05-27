@@ -49,3 +49,13 @@ jobs:
           git add helm/values.test.yaml
           git commit -m "Update image tag to ${{ steps.version.outputs.new_tag }}"
           git push
+
+      - name: Manual sync Argo CD application
+        env:
+          ARGOCD_SERVER: ${{ secrets.ARGOCD_SERVER }}
+          ARGOCD_AUTH_TOKEN: ${{ secrets.ARGOCD_AUTH_TOKEN }}
+        run: |
+          curl -sSL -o /usr/local/bin/argocd https://${ARGOCD_SERVER}/download/argocd-linux-amd64
+          chmod +x /usr/local/bin/argocd
+          argocd app sync guestbook
+          argocd app wait guestbook

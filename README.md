@@ -23,3 +23,7 @@ TODO:
       * `DOCKERHUB_TOKEN`
       * `DOCKERHUB_USERNAME`
       * `GH_PAT`
+      * `ARGOCD_SERVER`
+        * got -- through -- `argocd context`
+      * `ARGOCD_AUTH_TOKEN`
+        * == JWT / got -- via -- `argocd account generate-token --account admin`
